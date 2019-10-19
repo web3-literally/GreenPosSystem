@@ -1,0 +1,12 @@
+:host /deep/ ng2-smart-table .ng2-smart-actions {
+  height: 100% !important;
+  ng2-st-tbody-custom {
+    display: flex !important;
+    border-bottom: 1px solid #edf1f7;
+    .ng2-smart-actions {
+      display: flex !important;
+    }
+  }
+
+  //margin-bottom: -45px !important;
+}

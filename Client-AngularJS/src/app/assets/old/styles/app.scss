@@ -1,0 +1,562 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+// Variables
+@import "variables";
+@import "nav";
+@import "auth";
+@import "table";
+@import "order";
+@import "index";
+@import "cart";
+@import "kitchen";
+@import "cashier";
+@import "error";
+@import "profile";
+@import "./formvalidation/formValidation.css";
+
+textarea {
+  min-height: 10em;
+}
+
+.order-modal, .cart-modal {
+  textarea {
+    min-height: unset;
+  }
+}
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.green-pos {
+  padding-bottom: 44px;
+  .panel {
+    box-shadow: 3px 4px 14px rgba(0, 0, 0, 0.14);
+    padding: 2rem 2rem;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    margin: 20px 0 30px;
+    border-radius: 0;
+  }
+  .breadcrumb {
+    margin-bottom: 0;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.site-footer {
+  background-color: rgba(235, 241, 242, 0.9) !important;
+  border-top: 1px solid #d8dcde !important;
+}
+
+.site-footer-dark {
+  background-color: rgba(22, 27, 33, 0.75) !important;
+  border-top: 1px solid #263035 !important;
+  color: rgba(255, 255, 255, 0.73);
+}
+
+.no-img-card {
+  border-top: 4px solid theme-color-level(primary, -5) !important;
+  height: 224px;
+  h5 {
+    margin-top: 70px !important;
+    color: #676f74 !important;
+    font-size: 20px !important;
+  }
+}
+
+.dashboard-card {
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 0 !important;
+  h5 {
+    margin-top: 7px;
+    color: #565e63;
+  }
+  h6 {
+    color: #99a9ad;
+  }
+}
+
+.panel .dashboard-card img {
+  padding: 0px 0px 25px;
+}
+
+.green-pos .control-label {
+  color: #778286;
+}
+
+.loader-overlay {
+  background: theme-color-level(primary) !important;
+}
+
+.css-menubar .site-navbar .navbar-brand {
+  text-align: left !important;
+}
+
+.btn.btn-primary {
+  color: #ffff;
+  background-color: theme-color-level(primary);
+  border-color: theme-color-level(primary);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: theme-color-level(primary, 2) !important;
+  border-color: theme-color-level(primary, 2) !important;
+}
+
+.btn.btn-primary:hover, .btn.btn-primary:focus {
+  color: #fff !important;
+  background-color: theme-color-level(primary, 1) !important;
+  border-color: theme-color-level(primary, 1) !important;
+}
+
+.btn-outline-primary, .btn-outline.btn-primary {
+  color: theme-color-level(primary) !important;
+  background-color: transparent;
+  border-color: theme-color-level(primary) !important;
+}
+
+.btn-outline-primary:not([disabled]):not(.disabled):active, .btn-outline-primary:hover, .btn-outline-primary:focus {
+  color: #fff !important;
+  background-color: theme-color-level(primary) !important;
+  border-color: theme-color-level(primary) !important;
+}
+
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled.hover, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus, .btn-primary[disabled].hover, .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary.hover, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+  color: #fff;
+  background-color: theme-color-level(primary, -8) !important;
+  border-color: theme-color-level(primary, -8) !important;
+}
+.panel {
+  box-shadow: 3px 4px 14px rgba(0, 0, 0, 0.14);
+  padding: 2rem 2rem;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  margin: 20px 0 30px;
+
+  .img-holder {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.41);
+    box-shadow: 6px 7px 11px 0px rgba(0, 0, 0, 0.04);
+  }
+  img {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.submit-btn-right {
+  margin: 20px 0 15px;
+  text-align: end;
+}
+
+.img-responsive {
+  width: 100%
+}
+
+.item-count {
+  text-align: center;
+  display: flex;
+  position: absolute;
+  background-color: theme-color-level(primary);
+  width: 28px;
+  height: 28px;
+  padding: 1px 0 1px;
+  border-radius: 99px;
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.34);
+  z-index: 600;
+  margin: -9px;
+  p {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.final-count {
+  margin: -17px -26px;
+  text-align: center;
+  display: flex;
+  position: absolute;
+  background-color: theme-color-level(primary);
+  width: 33px;
+  height: 33px;
+  font-size: 15px;
+  padding: 3px 0 1px;
+  border-radius: 99px;
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.34);
+  z-index: 600;
+  p {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.site-menubar-unfold {
+  .navbar-brand-logo-icon {
+    display: none !important;
+  }
+}
+
+.site-menubar-unfold .site-menu-category {
+  margin-top: 0 !important;
+}
+
+.site-menubar-unfold .site-menu-category-margin {
+  margin-top: 20px !important;
+}
+
+
+a:hover {
+  text-decoration: none;
+}
+.site-menubar {
+  height: 100%;
+}
+.navbar-toolbar .nav-link {
+  text-align: right;
+}
+.table td {
+  vertical-align: middle;
+  .btn-sm {
+    margin: 1px;
+  }
+}
+.site-navbar {
+  background-color: #ffff;
+  border-bottom: 2px solid;
+  border-color: theme-color-level(primary, -5);
+  z-index: 900;
+}
+.site-menubar {
+  z-index: 800;
+  background-color: #152a30;
+}
+.site-menu > .site-menu-item.hover > a, .site-menu > .site-menu-item:hover > a {
+  color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.09);
+}
+.site-menu > .site-menu-item.active {
+  background: theme-color-level(primary, 2);
+}
+.form-control {
+  height: auto;
+}
+.site-navbar .navbar-header .hamburger .hamburger-bar, .site-navbar .navbar-header .hamburger::after, .site-navbar .navbar-header .hamburger::before {
+  background-color: theme-color-level(primary, -5);
+}
+.modal-content {
+  border-radius: 0;
+}
+.site-navbar, table {
+  .dropdown-item {
+    width: calc(100% - 4px);
+    margin: 2px 2px;
+    color: #6d7984;
+  }
+  .dropdown-item:hover, .dropdown-item:focus {
+    background-color: theme-color-level(primary, -9);
+  }
+  .dropdown-item:focus {
+    background-color: theme-color-level(primary);
+  }
+}
+
+.site-menubar-unfold .green-pos .site-menu > .site-menu-item > a {
+  padding: 0 30px;
+  line-height: 72px;
+}
+.cart-heading {
+  margin-left: auto;
+  font-size: 24px;
+  color: theme-color-level(primary, 2);
+  line-height: 24px;
+}
+
+.cart-item {
+  .close {
+    color: theme-color-level(secondary) !important;
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.order-cart {
+  display: block;
+  z-index: 300;
+  height: 60px;
+  width: 60px;
+  font-size: 24px;
+  padding: 10px 15px 10px 13px;
+  background-color: theme-color-level(tertiary);
+  border: 2px solid #ffff;
+  border-radius: 99px;
+  box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.41);
+  margin: 75px 30px;
+  color: #fff;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  .fa, .fas {
+    line-height: 35px;
+  }
+}
+
+.order-cart:hover, .order-cart:focus {
+  height: 62px;
+  width: 62px;
+  font-size: 24px;
+  padding: 11px 15px 10px 14px;
+  background-color: theme-color-level(tertiary, 1);
+  color: #fff;
+  box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.41);
+  margin: 74px 29px;
+  right: 0;
+  bottom: 0;
+}
+
+.cashier {
+  .card {
+    border-top: 7px solid;
+    border-color: theme-color-level(primary, -4);
+  }
+}
+
+.page-error .error header {
+  opacity: .6;
+  h1 {
+    color: theme-color-level(primary, 9);
+  }
+  p {
+    color: #38434d;
+  }
+}
+
+.error {
+  background-color: theme-color-level(secondary, -8);
+  height: 100%;
+  position: absolute;
+  min-width: 100%;
+}
+
+.background-image {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.lockscreen {
+  height: 100%;
+  position: absolute;
+  min-width: 100%;
+  .locked-user {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .enter-password {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  footer {
+    p {
+      color: rgba(255, 255, 255, 0.45);
+    }
+  }
+  .btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+.css-menubar {
+  .full-width-page {
+    .page, .site-footer {
+      margin-left: 0;
+    }
+  }
+}
+
+.dashboard-page {
+  .card {
+    margin-top: 30px;
+    border-radius: 0;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.1);
+  }
+  .card-body {
+    text-align: center;
+    font-size: 14px;
+    color: #889ba2;
+    padding: 35px 15px;
+  }
+  .card-header {
+    background-color: rgba(0, 0, 0, 0.01);
+    text-align: center;
+    font-size: 18px;
+    color: theme-color-level(primary);
+    border-bottom: 1px solid rgba(148, 148, 148, 0.13);
+  }
+}
+
+.fv-form-bootstrap .help-block {
+  color: #ef6565;
+  font-size: 12px;
+}
+
+.nubeslab-footer {
+  width: 135px;
+  margin-top: -4px;
+  padding: 0 10px;
+}
+
+.green-pos-footer {
+  width: 100px;
+  margin-top: -1px;
+  padding: 0 5px;
+}
+.profile {
+  .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover {
+    border-color: transparent;
+    border-bottom-color: theme-color-level(primary);
+  }
+  .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: theme-color-level(primary, -11);
+  }
+  .nav-link:hover {
+    background-color: rgba(232, 232, 232, 0.2);
+  }
+
+}
+
+.green-pos {
+  .checkbox-primary input[type=checkbox]:checked + input[type=hidden] + label::before, .checkbox-primary input[type=checkbox]:checked + label::before, .checkbox-primary input[type=radio]:checked + input[type=hidden] + label::before, .checkbox-primary input[type=radio]:checked + label::before {
+    background-color: theme-color-level(primary, 1);
+    border-color: theme-color-level(primary);
+  }
+  .checkbox-custom label {
+    color: #778286;
+  }
+}
+
+.page-horizontal-padding {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.menubar-light {
+  .site-menubar {
+    background-color: #ffffff;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.18);
+  }
+  .site-menu-item a {
+    display: block;
+    color: theme-color-level(primary, 2);
+  }
+  .site-menu > .site-menu-item.hover > a, .site-menu > .site-menu-item:hover > a {
+    color: theme-color-level(primary, -1);
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  .site-menu > .site-menu-item.active {
+    background: theme-color-level(primary, -4);
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .site-menu > .site-menu-item.active > a {
+    color: #fff;
+    background: 0 0;
+  }
+}
+
+.page-heading {
+  color: theme-color-level(secondary);
+}
+
+@media (min-width: 768px) {
+  .table-heading {
+    text-align: center;
+    color: theme-color-level(secondary);
+  }
+}
+
+@media (max-width: 768px) {
+  .table-heading {
+    text-align: left;
+    color: theme-color-level(secondary);
+  }
+}
+
+.padding-top-30 {
+  padding-top: 30px;
+}
+
+.green-pos .card-padding {
+  padding: .5rem .5rem 1rem;
+}
+
+.green-pos .card {
+  margin-bottom: inherit;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .panel {
+    padding: 2rem .5rem !important;
+    margin: .5rem .5rem 15px !important;
+  }
+  .kitchen-panel .main-heading {
+    margin-top: 0 !important;
+  }
+  .cashier {
+    padding: 0 .5rem !important;
+  }
+}
+
+.sortable-handle {
+  float: left !important;
+  display: block !important;
+  font-size: 1.5rem !important;
+  color: theme-color-level(secondary) !important;
+  cursor: pointer !important;
+  padding: 1rem 0 0 1rem !important;
+  opacity: .5;
+}
+
+.pos-cart .ms-container .ms-selectable li.ms-hover, .ms-container .ms-selection li.ms-hover {
+  background-color: theme-color-level(secondary) !important;
+  span {
+    color: #ffff;
+  }
+}
+
+.pos-attendance {
+  .cart-item {
+    padding: 2rem 1.5rem;
+    box-shadow: 1px 3px 13px rgba(0, 0, 0, 0.07);
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    margin: 5px 0 5px;
+    border-radius: 0;
+  }
+}
+
+.green-pos {
+  .site-menu .badge {
+    padding: 5px 7px 3px;
+    font-size: .858rem;
+    font-weight: 300;
+    margin-left: 7px;
+  }
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active {
+  color: #fff !important;
+  background-color: theme-color-level(primary) !important;
+  border-color: theme-color-level(primary) !important;
+}

@@ -1,0 +1,20 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card{
+    width: 600px;
+    height: 800px;
+  }
+
+  nb-card-footer{
+    text-align: right;
+  }
+  input {
+    width: 100%;
+  }
+
+  .cancel {
+    margin-right: 1rem;
+  }
+  
+}

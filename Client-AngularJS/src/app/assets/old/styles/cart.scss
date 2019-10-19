@@ -1,0 +1,131 @@
+.pos-cart {
+  .modal-dialog {
+    max-width: none;
+    margin: 30px;
+  }
+  h2 {
+    text-align: center;
+  }
+  .align-center {
+    text-align: center;
+  }
+  .align-right {
+    text-align: right;
+  }
+  .cart-item {
+    padding: 20px 0;
+    box-shadow: 1px 3px 13px rgba(0, 0, 0, 0.07);
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    margin: 5px 0 5px;
+    border-radius: 0;
+  }
+  .cart-total {
+    box-shadow: 1px 3px 13px rgba(0, 0, 0, 0.07);
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    margin: 15px 5px 15px;
+    border-radius: 0;
+  }
+  .order-quantity {
+    width: 100%;
+    margin: 10px auto 20px auto;
+    display: flex !important;
+    input {
+      min-width: 1px;
+    }
+    .form-control {
+      border-radius: 0;
+    }
+  }
+  .form-label {
+    margin-top: 20px;
+  }
+  .thumbnail {
+    width: 70px;
+  }
+  .ms-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .ms-container:before {
+    display: none;
+  }
+  .ms-container .ms-selectable, .ms-container .ms-selection {
+    width: 49%;
+  }
+  @media (max-width: 992px) {
+    .ms-container .ms-selectable, .ms-container .ms-selection {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+  .ms-container .ms-list {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.empty-cart {
+  margin-top: 30px;
+  h3 {
+    width: 100%;
+    text-align: center;
+    color: #91979b;
+    font-weight: 900;
+  }
+  p {
+    width: 100%;
+    text-align: center;
+    color: #a7abae;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.modal-body {
+  .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}
+
+.cart-modal {
+  .modal.fade .modal-dialog {
+    transform: translate(30%, 0);
+  }
+  .modal.show .modal-dialog {
+    transform: translate(0, 0);
+  }
+  @media (min-width: 576px) {
+    .modal-dialog {
+      max-width: 1024px;
+    }
+  }
+  @media (max-width: 576px) {
+    .modal-body {
+      padding: 0;
+    }
+  }
+  .btn-group-lg > .btn {
+    padding: 0.5rem 14px;
+    border-radius: 5.3rem;
+  }
+  .btn-proceed {
+    width: 100%;
+    border-radius: 99px;
+  }
+  .label-item-total {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #6c6c6c;
+  }
+  .col-form-label {
+    padding-top: 0;
+  }
+}
+
+

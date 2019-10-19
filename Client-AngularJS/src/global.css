@@ -1,0 +1,16 @@
+
+.nb-theme-default ng2-smart-table .ng2-smart-actions {
+	padding: 0;
+	height: 100%;
+	display: flex;
+	
+  }
+
+  .nb-theme-default ng2-smart-table .ng2-smart-actions ng2-st-tbody-custom {
+	display: flex;
+	
+  }
+  
+  .nb-theme-default ng2-smart-table .ng2-smart-actions ng2-st-tbody-custom .ng2-smart-actions {
+	display: flex;
+  }

@@ -1,0 +1,16 @@
+<nb-card>
+    <nb-card-header>
+        Total All Registered Users
+    </nb-card-header>
+
+    <nb-card-body>
+        <div class="buttons-row" style="display: flex; justify-content: flex-end; padding: 5px;">
+            <button nbButton [status]="'primary'" (click)="onAdd($event)">
+                Add User
+            </button>
+        </div>
+        <ng2-smart-table [settings]="settings" [source]="source" (edit)="onEdit($event)" (create)="onAdd($event)"
+            (delete)="onDelete($event)" (custom)="onEnable($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>

@@ -1,0 +1,37 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card{
+    width: 50vw;
+    height: 80vh;
+    overflow: auto;
+  }
+
+  @media (max-width: 720px){
+    nb-card{
+      width: calc(100vw - 20px);
+      overflow: auto;
+    } 
+  }
+
+  nb-card-footer{
+    text-align: right;
+  }
+  input {
+    width: 100%;
+  }
+
+  .cancel {
+    margin-right: 1rem;
+  }
+  nb-tab{
+    label {
+      color: blue;
+    }
+  }
+  
+  .no-margin{
+    margin: 0;
+  }
+}
+

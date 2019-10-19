@@ -1,0 +1,78 @@
+.pos-auth {
+  .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 4px 13px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.logo-auth {
+  width: 250px;
+  padding: 15px;
+}
+
+.pos-auth {
+  height: 100%;
+  position: absolute;
+  min-width: 100%;
+  @media (max-width: 575px) {
+    .container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .page-content {
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 6px 9px 9px rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 6px 9px 9px rgba(0, 0, 0, 0.1);
+  }
+  .input-group {
+    margin-bottom: 15px;
+  }
+  label {
+    p {
+      margin: -2px 5px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+  footer p {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .auth-heading {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+  .checkbox {
+    margin-top: 25px;
+    label {
+      p {
+        float: right;
+      }
+    }
+  }
+  .btn {
+    margin: 15px 0;
+  }
+  .btn-lg {
+    width: 50%;
+  }
+  .page-copyright {
+    margin-top: 35px;
+  }
+}
+
+.register-vertical-align {
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

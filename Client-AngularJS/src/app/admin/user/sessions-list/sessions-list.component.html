@@ -1,0 +1,45 @@
+<nb-card>
+  <nb-card-header>
+    User Sessions List
+  </nb-card-header>
+
+  <nb-card-body>
+    <form>
+      <div class="form-group row m-2">
+        <div class="form-group col-sm-3 row">
+          <label for="company" class="col-sm-3 col-form-label">Company:</label>
+          <div class="col-sm-9">
+            <input nbInput fullWidth id="company" placeholder="company">
+          </div>
+        </div>
+        <div class="form-group col-sm-3 row">
+          <label for="branch" class="col-sm-3 col-form-label">Branch:</label>
+          <div class="col-sm-9">
+            <input nbInput fullWidth id="branch" placeholder="branch">
+          </div>
+        </div>
+        <div class="form-group col-sm-3 row">
+          <label class="col-sm-3 col-form-label">Since:</label>
+          <div class="col-sm-9">
+            <input nbInput placeholder="Form Picker" [nbDatepicker]="formpicker1">
+            <nb-datepicker #formpicker1></nb-datepicker>
+          </div>
+        </div>
+        <div class="form-group col-sm-3 row">
+          <label class="col-sm-3 col-form-label">Until:</label>
+          <div class="col-sm-9">
+            <input nbInput placeholder="Form Picker" [nbDatepicker]="formpicker2">
+            <nb-datepicker #formpicker2></nb-datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="buttons-row m-2">
+        <button nbButton shape="round">
+          Filter
+        </button>
+      </div>
+    </form>
+    <ng2-smart-table [settings]="settings" [source]="source" (edit)="onReport($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

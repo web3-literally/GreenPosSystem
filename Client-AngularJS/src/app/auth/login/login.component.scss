@@ -1,0 +1,80 @@
+.page-locked.pos-auth > div {
+    background: transparent;
+    .page-content {
+      display: inline-block;
+      width: 23%;
+      margin-top: 10%;
+      .btn.btn-primary {
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 188, 156);
+        border-color: rgb(29, 188, 156);
+      }
+      a{
+        color: rgb(29, 188, 156);
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  // .d-flex.h-100{
+  //   background: url(../../assets/images/lockscreen.png);
+  //   background-size: 100% 100%!important;
+  // }
+  
+  // .boxshadow {
+  //   position: relative;
+  //   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  //   padding: 10px;
+  //   background: white;
+  // }
+  // .login-container .card.boxshadow{
+  //   transition: all 1s ease-in-out;
+  //   transform: translateY(-200%);
+  //   opacity: 0;
+  //   background: rgba(255,255,255,0.05);
+  // }
+  // .login-container .card.boxshadow.showed{
+  //   transform: none;
+  //   opacity: 1;
+  // }
+  
+  // .boxshadow::before {
+  //   content: '';
+  //   position: absolute;
+  //   z-index: -1; /* hide shadow behind image */
+  //   // box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  //   width: 70%;
+  //   left: 15%; /* one half of the remaining 30% */
+  //   height: 100px;
+  //   bottom: 0;
+  // }
+  
+  // .cardshadow {
+  //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // }
+  
+  // .card-header {
+  //   background: transparent;
+  // }
+  
+  // .last-control-group {
+  //   margin-bottom: -0.75rem;
+  // }
+  
+  // .h-90 {
+  //   height: 90%;
+  // }
+  
+  // @media (min-width: 768px) {
+  //   .login-container {
+  //     width: 700px;
+  //   }
+  // }
+  
+  // @media (min-width: 1200px) {
+  //   .login-container {
+  //     width: 730px;
+  //   }
+  // }
+  

@@ -1,0 +1,123 @@
+<div class="green-pos">
+  <div class="page-locked pos-auth">
+    <img [src]="lockscreen" class="background-image">
+    <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+      <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
+        <img [src]="pos_logo_light" class="logo-auth">
+        <div class="col-12">
+        </div>
+        <p class="auth-heading">Sign in</p>
+        <form class="login" name="loginForm" #f="ngForm" novalidate
+          (ngSubmit)="f.form.valid ? login() :
+                          (!username.valid && showErrorAlert('Username is required', 'Please enter a valid username'));
+                          (!password.valid && showErrorAlert('Password is required', 'Please enter a valid password'))">
+          <div class="input-group">
+            <input type="text" id="login-username" name="username" placeholder="Enter username" autocomplete="username"
+              class="form-control"
+              [ngClass]="{'is-valid': f.submitted && username.valid, 'is-invalid' : f.submitted && !username.valid}"
+              [(ngModel)]="userLogin.userName" #username="ngModel" required />
+            <i *ngIf="f.submitted" class="fa form-control-feedback"
+              [ngClass]="{'fa-check': username.valid, 'fa-times' : !username.valid}" aria-hidden="true"></i>
+            <span class="invalid-feedback" *ngIf="f.submitted && !username.valid">
+              Username is required
+            </span>
+          </div>
+          <div class="input-group">
+            <input type="password" id="login-password" name="password" placeholder="Enter password"
+              autocomplete="current-password" class="form-control"
+              [ngClass]="{'is-valid': f.submitted && password.valid, 'is-invalid' : f.submitted && !password.valid}"
+              [(ngModel)]="userLogin.password" #password="ngModel" required />
+            <i *ngIf="f.submitted" class="fa form-control-feedback"
+              [ngClass]="{'fa-check': password.valid, 'fa-times' : !password.valid}" aria-hidden="true"></i>
+            <span class="invalid-feedback" *ngIf="f.submitted && !password.valid">
+              Password is required
+            </span>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="remember" [(ngModel)]="userLogin.rememberMe">
+              <p>Remember Me</p>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+          <p>
+            <a href="/auth/password-reset">Forgot Your Password?</a>
+            ·
+            <a href="/auth/sign-up">Sign up</a>
+            ·
+            <a href="/auth/branch-sign-in">I'm a branch</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="full-width-page">
+  <footer class="site-footer site-footer-dark fixed-bottom">
+    <div class="site-footer-legal">© 2018
+      <a href="#"><img [src]="pos_logo_light" class="green-pos-footer"></a></div>
+    <div class="site-footer-right">
+      Cooked by <a href="https://nubeslab.com/"><img [src]="nubeslab_light" class="nubeslab-footer"></a>
+    </div>
+  </footer>
+</div>
+<!-- <div class="d-flex h-100">
+  <div class="login-container m-auto">
+    <div class="card boxshadow" [ngClass]="isLoginShowed===true?'showed':''">
+      <div class="card-header bg-primary dark text-white clearfix">
+        <i class="fa fa-lock" aria-hidden="true"></i> Login
+        <button *ngIf="isModal" type="button" class="close float-right text-light" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="col-md-8 offset-md-2">
+          <form *ngIf="formResetToggle" class="login" name="loginForm" #f="ngForm" novalidate
+                (ngSubmit)="f.form.valid ? login() :
+                          (!username.valid && showErrorAlert('Username is required', 'Please enter a valid username'));
+                          (!password.valid && showErrorAlert('Password is required', 'Please enter a valid password'))">
+            <div class="form-group row has-feedback-icon">
+              <label class="col-form-label col-md-3" for="login-username">Username:</label>
+              <div class="col-md-9">
+                <input type="text" id="login-username" name="username" placeholder="Enter username" autocomplete="username" class="form-control" [ngClass]="{'is-valid': f.submitted && username.valid, 'is-invalid' : f.submitted && !username.valid}"
+                       [(ngModel)]="userLogin.userName" #username="ngModel" required />
+                <i *ngIf="f.submitted" class="fa form-control-feedback" [ngClass]="{'fa-check': username.valid, 'fa-times' : !username.valid}" aria-hidden="true"></i>
+                <span class="invalid-feedback" *ngIf="f.submitted && !username.valid">
+                  Username is required
+                </span>
+              </div>
+            </div>
+            <div class="form-group row has-feedback-icon">
+              <label class="col-form-label col-md-3" for="login-password">Password:</label>
+              <div class="col-md-9">
+                <input type="password" id="login-password" name="password" placeholder="Enter password" autocomplete="current-password" class="form-control" [ngClass]="{'is-valid': f.submitted && password.valid, 'is-invalid' : f.submitted && !password.valid}"
+                       [(ngModel)]="userLogin.password" #password="ngModel" required />
+                <i *ngIf="f.submitted" class="fa form-control-feedback" [ngClass]="{'fa-check': password.valid, 'fa-times' : !password.valid}" aria-hidden="true"></i>
+                <span class="invalid-feedback" *ngIf="f.submitted && !password.valid">
+                  Password is required
+                </span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="offset-md-3 col-md-9">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="login-rememberme" name="rememberMe" [(ngModel)]="userLogin.rememberMe">
+                  <label class="form-check-label" for="login-rememberme">Remember me</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="offset-md-3 col-md-9">
+                <button type="submit" class="btn btn-primary" [disabled]="isLoading">
+                  <i *ngIf="isLoading" class='fa fa-circle-o-notch fa-spin'></i> {{isLoading ? 'Logging in...' : 'Login'}}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

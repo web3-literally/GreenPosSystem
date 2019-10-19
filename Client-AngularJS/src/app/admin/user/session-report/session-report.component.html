@@ -1,0 +1,34 @@
+<nb-card>
+  <nb-card-header>
+    User Session Report: 740416F6
+  </nb-card-header>
+
+  <nb-card-body>
+    <form>
+      <div class="form-group m-2">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Sign in at:</label>
+          <label class="col-sm-4 col-form-label">2019-08-18 10:55:28</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Sign out at:</label>
+          <label class="col-sm-4 col-form-label">2019-08-18 10:55:28</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">POS User Name:</label>
+          <label class="col-sm-4 col-form-label">ABC Pizza Cashier</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Staff Name:</label>
+          <label class="col-sm-4 col-form-label">Apollo</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Staff ID:</label>
+          <label class="col-sm-4 col-form-label">Willcomeo022</label>
+        </div>
+      </div>
+    </form>
+    <ng2-smart-table [settings]="settings" [source]="source" (edit)="onReport($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

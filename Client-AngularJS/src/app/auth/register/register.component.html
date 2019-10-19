@@ -1,0 +1,168 @@
+<div class="green-pos">
+  <div class="pos-auth">
+  <img [src]="lockscreen" class="background-image">
+  <div class="page text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+      <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-10 col-12">
+              <div class="container register-vertical-align animation-slide-top animation-duration-1">
+                  <img [src]="pos_logo_light" class="logo-auth">
+                  <p class="auth-heading">Sign Up</p>
+                  <form method="POST" class="form fv-form fv-form-bootstrap" novalidate="novalidate"><button type="submit" class="fv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+                      <input type="hidden" name="_token" value="tKcA4Rtcl41dhCAK9QDv1JXZkGyT5gdL7tSpNtCc">                            <div class="form-group row">
+                          <label for="name" class="col-md-2 col-form-label text-md-right">
+                              <p>Name</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="name" type="text" class="form-control" data-fv-notempty="true" data-fv-notempty-message="The user name is required and cannot be empty" name="name" value="" required="" autofocus="" data-fv-field="name">
+                                                              <small class="help-block" data-fv-validator="notEmpty" data-fv-for="name" data-fv-result="NOT_VALIDATED" style="display: none;">The user name is required and cannot be empty</small></div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="email" class="col-md-2 col-form-label text-md-right">
+                              <p>Email</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="email" type="email" class="form-control" data-fv-notempty="true" data-fv-notempty-message="The user email is required and cannot be empty" name="email" value="" required="" data-fv-field="email">
+                                                              <small class="help-block" data-fv-validator="emailAddress" data-fv-for="email" data-fv-result="NOT_VALIDATED" style="display: none;">Please enter a valid email address</small><small class="help-block" data-fv-validator="notEmpty" data-fv-for="email" data-fv-result="NOT_VALIDATED" style="display: none;">The user email is required and cannot be empty</small></div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label for="password" class="col-md-2 col-form-label text-md-right">
+                              <p>Password</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="password" type="password" class="form-control" data-fv-notempty="true" data-fv-notempty-message="The user password is required and cannot be empty" name="password" required="" data-fv-field="password">
+                                                              <small class="help-block" data-fv-validator="notEmpty" data-fv-for="password" data-fv-result="NOT_VALIDATED" style="display: none;">The user password is required and cannot be empty</small></div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="password2" class="col-md-2 col-form-label text-md-right">
+                              <p>Password (again)</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="password2" type="password" class="form-control" data-fv-notempty="true" data-fv-notempty-message="The user password is required and cannot be empty" name="password2" required="" data-fv-field="password2">
+                                                              <small class="help-block" data-fv-validator="notEmpty" data-fv-for="password2" data-fv-result="NOT_VALIDATED" style="display: none;">The user password is required and cannot be empty</small></div>
+                      </div>
+                      <div class="form-group row mb-0">
+                          <div class="col-md-8 offset-md-2">
+                              <button type="submit" class="btn btn-lg btn-primary">
+                                  Register
+                              </button>
+                          </div>
+                      </div>
+                  </form>
+                  <div class="col-12 text-center mt-4">
+                      <label>
+                          <a href="/auth/sign-in" class="ml-1">
+                              Do you already have an account? Sign In
+                          </a>
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>
+<!-- End Page -->
+</div>
+<div class="full-width-page">
+  <footer class="site-footer site-footer-dark fixed-bottom">
+  <div class="site-footer-legal">© 2018
+      <a href="#"><img [src]="pos_logo_light" class="green-pos-footer"></a></div>
+  <div class="site-footer-right">
+      Cooked by <a href="https://nubeslab.com/"><img [src]="nubeslab_light" class="nubeslab-footer"></a>
+  </div>
+</footer></div>
+
+<!-- <div class="pos-auth">
+  <img src="/img/lockscreen.png" class="background-image">
+  <div class="page text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+      <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-10 col-12">
+              <div class="container register-vertical-align animation-slide-top animation-duration-1">
+                  <img src="/img/pos-logo.png" class="logo-auth">
+                  <p class="auth-heading">Sign Up</p>
+                  <form method="POST" class="form">
+                      @csrf
+                      <div class="form-group row">
+                          <label for="name" class="col-md-2 col-form-label text-md-right">
+                              <p>{{ trans('common.name') }}</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="name" type="text"
+                                     class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                     data-fv-notempty="true"
+                                     data-fv-notempty-message="The user name is required and cannot be empty"
+                                     name="name" value="{{ $user->name }}" required autofocus>
+                              @if ($errors->has('name'))
+                                  <span class="invalid-feedback">{{ $errors->first('name') }}</span>
+                              @endif
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="email" class="col-md-2 col-form-label text-md-right">
+                              <p>{{ trans('user.email') }}</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="email" type="email"
+                                     class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                     data-fv-notempty="true"
+                                     data-fv-notempty-message="The user email is required and cannot be empty"
+                                     name="email" value="{{ $user->email }}" required>
+                              @if ($errors->has('email'))
+                                  <span class="invalid-feedback">{{ $errors->first('email') }}</span>
+                              @endif
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label for="password" class="col-md-2 col-form-label text-md-right">
+                              <p>{{ trans('user.password') }}</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="password" type="password"
+                                     class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                     data-fv-notempty="true"
+                                     data-fv-notempty-message="The user password is required and cannot be empty"
+                                     name="password" required>
+                              @if ($errors->has('password'))
+                                  <span class="invalid-feedback">{{ $errors->first('password') }}</span>
+                              @endif
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="password2" class="col-md-2 col-form-label text-md-right">
+                              <p>{{ trans('user.password2') }}</p>
+                          </label>
+                          <div class="col-md-10">
+                              <input id="password2" type="password"
+                                     class="form-control{{ $errors->has('password2') ? ' is-invalid' : '' }}"
+                                     data-fv-notempty="true"
+                                     data-fv-notempty-message="The user password is required and cannot be empty"
+                                     name="password2" required>
+                              @if ($errors->has('password2'))
+                                  <span class="invalid-feedback">{{ $errors->first('password2') }}</span>
+                              @endif
+                          </div>
+                      </div>
+                      <div class="form-group row mb-0">
+                          <div class="col-md-8 offset-md-2">
+                              <button type="submit" class="btn btn-lg btn-primary">
+                                  Register
+                              </button>
+                          </div>
+                      </div>
+                  </form>
+                  <div class="col-12 text-center mt-4">
+                      <label>
+                          <a href="{{ locale_url('sign-in') }}" class="ml-1">
+                              Do you already have an account? Sign In
+                          </a>
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>
+-->

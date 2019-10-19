@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/GreenPOS/DAL/bin/Debug/netstandard2.0
+/GreenPOS/DAL/obj
+/GreenPOS/GreenPOS/bin/Debug/netcoreapp2.2
+/GreenPOS/GreenPOS/ClientApp
+/GreenPOS/GreenPOS/Logs
+/GreenPOS/GreenPOS/obj

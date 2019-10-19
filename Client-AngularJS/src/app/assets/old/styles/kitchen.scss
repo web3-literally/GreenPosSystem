@@ -1,0 +1,100 @@
+.css-menubar {
+  .kitchen-display {
+    .page, .site-footer {
+      margin-left: 0;
+    }
+  }
+}
+
+.order-card-header {
+  margin-left: -1.429rem;
+  margin-right: -1.429rem;
+  margin-top: -1.429rem;
+  padding: 1.429rem;
+}
+
+.card-red {
+  border-color: #eb6e6e !important;
+  border-top: 5px solid;
+}
+
+.card-yellow {
+  border-color: #ebb86e !important;
+  border-top: 5px solid;
+}
+
+.card-green {
+  border-color: #86d399 !important;
+  border-top: 5px solid;
+}
+
+.kitchen-display {
+  .page {
+    padding: 0 15px 0;
+  }
+  .card-shadow {
+    box-shadow: 6px 8px 2px rgba(0, 0, 0, .05);
+  }
+  .card-title {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .card-text {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    small {
+      color: inherit;
+    }
+  }
+  .item-preference {
+    margin: -5px 10px 10px;
+  }
+  .card-item {
+    margin-top: 30px;
+  }
+  .btn-lg {
+    border-radius: 1.3rem;
+    width: 100%;
+  }
+  strong {
+    font-weight: 600;
+  }
+}
+
+.kitchen-angle-down {
+  float: right;
+  margin-top: 16px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+.kitchen-panel {
+
+  box-shadow: 3px 4px 14px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  margin: 20px 0 30px;
+  .main-heading {
+    text-align: center;
+    margin-top: -15px;
+  }
+}
+
+.green-pos {
+  .kitchen-display {
+    .panel-heading {
+      border-bottom: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .panel {
+      padding: 20px 20px 0 !important;
+      margin: 20px 0 30px !important;
+    }
+    .panel-group .panel-title[aria-expanded=true]:after {
+      opacity: 0;
+    }
+    .panel-group .panel-title[aria-expanded=false]:before {
+      opacity: 0;
+    }
+  }
+}

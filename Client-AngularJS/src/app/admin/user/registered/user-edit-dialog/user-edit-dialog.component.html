@@ -1,0 +1,161 @@
+<form #user="ngForm" (ngSubmit)="onSubmit(user)">
+  <nb-card>
+
+    <nb-card-header>{{ title }}</nb-card-header>
+    <nb-card-body>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Company Name</label>
+        <div class="col-sm-9">
+          <!-- <input name="company_name"  nbInput fullWidth placeholder="Company Name"> -->
+          <nb-select selected="{{userdata.companyName}}" [(ngModel)]="userdata.companyName" name="company_name"
+            style="width: 50%;">
+            <nb-option value="CompanyA">CompanyA</nb-option>
+            <nb-option value="CompanyB">CompanyB</nb-option>
+            <nb-option value="CompanyC">CompanyC</nb-option>
+          </nb-select>
+          <div *ngIf="(submitted && !userdata.companyName)" class="text-danger">
+            ** Please Input Company Name! **
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Branch Name</label>
+        <div class="col-sm-9">
+          <nb-select selected="{{userdata.branchName}}" [(ngModel)]="userdata.branchName" name="branch_name"
+            style="width: 50%;">
+            <nb-option value="BranchA">BranchA</nb-option>
+            <nb-option value="BranchB">BranchB</nb-option>
+            <nb-option value="BranchC">BranchC</nb-option>
+          </nb-select>
+          <div *ngIf="(submitted && !userdata.branchName)" class="text-danger">
+            ** Please Input branchName! **
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Managed By</label>
+        <div class="col-sm-9">
+          <nb-select selected="{{userdata.manageBy}}" [(ngModel)]="userdata.manageBy" name="managed_by"
+            style="width: 50%;">
+            <nb-option value="ManageByA">ManageByA</nb-option>
+            <nb-option value="ManageByB">ManageByB</nb-option>
+            <nb-option value="ManageByC">ManageByC</nb-option>
+          </nb-select>
+          <div *ngIf="(submitted && !userdata.manageBy)" class="text-danger">
+            ** Please Input ManageBy! **
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Business Plan</label>
+        <div class="col-sm-9">
+          <input name="business_plan" nbInput fullWidth placeholder="Business Plan">
+          <!-- <div *ngIf="(submitted && !userdata.staffName)" class="text-danger">
+            ** Please Input Staff Name! **
+          </div> -->
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Staff Name</label>
+        <div class="col-sm-9">
+          <input name="staff_name" [(ngModel)]="userdata.staffName" nbInput fullWidth placeholder="Staff Name">
+          <div *ngIf="(submitted && !userdata.staffName)" class="text-danger">
+            ** Please Input Staff Name! **
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Staff ID</label>
+        <div class="col-sm-9">
+          <input name="staff_id" [(ngModel)]="userdata.staffID" nbInput fullWidth placeholder="Staff ID">
+          <div *ngIf="(submitted && !userdata.staffID)" class="text-danger">
+            ** Please Input StaffID! **
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input name="email" [(ngModel)]="userdata.email" nbInput fullWidth placeholder="Email">
+          <div *ngIf="(submitted && !userdata.email)" class="text-danger">
+            ** Must be input Email! **
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Phone Number</label>
+        <div class="col-sm-9">
+          <input name="pos_username" [(ngModel)]="userdata.phoneNumber" nbInput fullWidth placeholder="Phone Number">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">User Name</label>
+        <div class="col-sm-9">
+          <input name="username" [(ngModel)]="userdata.userName" nbInput fullWidth placeholder="User Name">
+          <div *ngIf="(submitted && !userdata.userName)" class="text-danger">
+            ** Must be input UserName! **
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Role</label>
+        <div class="col-sm-9">
+          <nb-select selected="{{userdata.roles}}" name="roles" [(ngModel)]="selectedRole" style="width: 50%;">
+            <nb-option value="{{role.name}}" *ngFor="let role of allRoles">{{role.name}}</nb-option>
+          </nb-select>
+          <div *ngIf="(!isNew && userdata.roles.length==0 && !selectedRole) || (submitted && !selectedRole)"
+            class="text-danger">
+            ** Must be assigned Role! **
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input name="password" type="password" [(ngModel)]="userdata.newPassword" nbInput fullWidth
+            placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Password(again)</label>
+        <div class="col-sm-9">
+          <input name="password_again" type="password" [(ngModel)]="userdata.confirmPassword" nbInput fullWidth
+            placeholder="Password(again)">
+          <div *ngIf="(isNew && submitted && !userdata.newPassword && !userdata.confirmPassword)" class="text-danger">
+            ** Password Required!**
+          </div>
+          <div
+            *ngIf="(submitted && (userdata.newPassword || userdata.confirmPassword) && userdata.newPassword!=userdata.confirmPassword)"
+            class="text-danger">
+            ** New Password and ConfirmPassword do not match! **
+          </div>
+          <div
+            *ngIf="(submitted && (userdata.newPassword || userdata.confirmPassword) && userdata.newPassword==userdata.confirmPassword && userdata.newPassword.length < 6 )"
+            class="text-danger">
+            ** Please enter the new password (minimum of 6 characters)! **
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Status</label>
+        <div class="col-sm-9">
+          <nb-select selected="{{userdata.isEnabled}}" name="verifyStatus" [(ngModel)]="userdata.isEnabled"
+            style="width: 50%;">
+            <!-- <nb-option value="Pending Activation">Pending Activation</nb-option> -->
+            <nb-option value="true">Enable</nb-option>
+            <nb-option value="false">Disable</nb-option>
+          </nb-select>
+          <p>{{userdata.IsEnabled}}</p>
+        </div>
+      </div>
+
+
+    </nb-card-body>
+    <nb-card-footer>
+      <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+      <button nbButton status="success" type="submit">Submit</button>
+    </nb-card-footer>
+  </nb-card>
+</form>

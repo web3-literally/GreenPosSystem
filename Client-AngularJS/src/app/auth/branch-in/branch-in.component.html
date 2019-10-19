@@ -1,0 +1,35 @@
+<div class="green-pos">
+  <div class="page-locked pos-auth">
+      <img [src]="lockscreen" class="background-image">
+      <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+          <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
+              <img [src]="pos_logo_light" class="logo-auth">
+              <p class="auth-heading">Branch sign in</p>
+              <form method="POST">
+                  <input type="hidden" name="_token" value="tKcA4Rtcl41dhCAK9QDv1JXZkGyT5gdL7tSpNtCc">
+                  <div class="input-group">
+                      <input id="email" type="text" class="form-control" name="branch_username" value=""
+                          placeholder="Branch username" required="" autofocus="">
+                  </div>
+                  <div class="input-group">
+                      <input id="password" type="password" class="form-control" name="branch_password"
+                          placeholder="Branch password" required="">
+                  </div>
+                  <button class="btn btn-lg btn-primary">Sign in</button>
+                  <p>
+                      <a href="/auth/sign-in">I'm a human</a>
+                  </p>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="full-width-page">
+  <footer class="site-footer site-footer-dark fixed-bottom">
+      <div class="site-footer-legal">© 2018
+          <a href="#"><img [src]="pos_logo_light" class="green-pos-footer"></a></div>
+      <div class="site-footer-right">
+          Cooked by <a href="https://nubeslab.com/"><img [src]="nubeslab_light" class="nubeslab-footer"></a>
+      </div>
+  </footer>
+</div>

@@ -1,0 +1,99 @@
+<form (ngSubmit)="onSubmit()">
+  <nb-card>
+
+    <nb-card-header>{{ title }}</nb-card-header>
+    <nb-card-body>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-9">
+          <input name="name" [(ngModel)]="roledata.name" nbInput fullWidth placeholder="Name">
+          <div *ngIf="submitted &amp;&amp; !roledata.name" class="text-danger">
+              <div *ngIf="!roledata.name">Name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-form-label">Description</label>
+        <div class="col-sm-9">
+          <input name="description" [(ngModel)]="roledata.description" nbInput fullWidth placeholder="Description" />
+          <div *ngIf="submitted &amp;&amp; !roledata.description" class="text-danger">
+              <div *ngIf="!roledata.description">Description is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="row" style="overflow: auto">
+
+          <!-- Edit modal -->
+          <div class="row no-margin" *ngIf="!isNew">
+
+            <ng-template ngFor let-permissionGroup [ngForOf]="allPermissions | groupBy: 'groupName'" let-i="index">
+              
+              <div class="form-group row no-margin col-sm-6 permissionsColumn" style="border-bottom: .5px solid lightgray; padding: 20px 10px">
+                <div class="col-md-5">
+                    <nb-checkbox (checkedChange)="toggleGroup(permissionGroup.key,$event)" [value]="groupCheckList[permissionGroup.key]==1?true:false">
+                        {{permissionGroup.key}}
+                    </nb-checkbox>
+                </div>
+                <div class="col-md-7">
+                  <div class="checkbox" *ngFor="let permission of permissionGroup.value">
+                    <nb-checkbox [disabled]="!canManageRoles" name="checkboxes-{{permission.value}}" status="success"
+                      id="checkboxes-{{permission.value}}" [(ngModel)]="selectedValues[permission.value]" (ngModelChange)="selectUpdated()">
+                      {{permission.name}}
+                    </nb-checkbox>
+                  </div>
+                </div>
+                
+                
+              </div>
+              
+              <div *ngIf="(i + 1) % 2 === 0" class="clearfix"></div>
+            </ng-template>
+          </div>
+
+          <!-- Create modal -->
+          <div class="row no-margin" *ngIf="isNew">
+            <div class="col-md-3" style="padding-left: 30px">
+                <label>Role Set</label>
+                <div class="checkbox" *ngFor="let role of allRoles">
+                    <nb-checkbox [disabled]="!canManageRoles" name="role-{{role.index}}" status="danger"
+                      id="role-{{role.index}}" [(ngModel)]="selectedRoles[role.index]" (ngModelChange)="onSelectRoles()">
+                      {{role.name}}
+                    </nb-checkbox>
+                  </div>
+            </div>
+            <div class="col-md-9 row no-margin">
+              <ng-template ngFor let-permissionGroup [ngForOf]="allPermissions | groupBy: 'groupName'" let-i="index">
+                <div class="form-group row col-sm-6 permissionsColumn"  style="border-bottom: .5px solid lightgray; padding: 20px 10px">
+                    <div class="col-md-5">
+                        <nb-checkbox (checkedChange)="toggleGroup(permissionGroup.key,$event)" [value]="groupCheckList[permissionGroup.key]==1?true:false">
+                            {{permissionGroup.key}}
+                        </nb-checkbox>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="checkbox" *ngFor="let permission of permissionGroup.value">
+                        <nb-checkbox [disabled]="!canManageRoles" name="checkboxes-{{permission.value}}" status="success"
+                          id="checkboxes-{{permission.value}}" [(ngModel)]="selectedValues[permission.value]" (ngModelChange)="selectUpdated()">
+                          {{permission.name}}
+                        </nb-checkbox>
+                      </div>
+                    </div>
+                </div>
+                <div *ngIf="(i + 1) % 2 === 0" class="clearfix"></div>
+              </ng-template>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nb-card-body>
+    <nb-card-footer>
+      <a href="javascript:" style="float: left" (click)="selectAll()">Select All&nbsp;|</a>
+      <a href="javascript:" style="float: left" (click)="selectNone()">&nbsp;Select None</a>
+
+
+      <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+      <button nbButton status="success" type="submit">Submit</button>
+    </nb-card-footer>
+  </nb-card>
+</form>
